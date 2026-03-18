@@ -206,6 +206,10 @@ section {
     transition: transform 0.2s ease;
 }
 
+a.cert-badge {
+    text-decoration: none; /* Removes the default link underline */
+}
+
 .cert-badge:hover {
     transform: translateY(-5px); /* Adds a nice hover float effect */
 }
