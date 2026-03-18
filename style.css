@@ -66,6 +66,83 @@ section {
     padding: 60px 0;
 }
 
+/* --- Profile Section --- */
+.profile-container {
+    display: flex; /* Uses Flexbox to put image and text side-by-side */
+    align-items: center; /* Centers them vertically */
+    gap: 40px; /* Puts a nice 40px space between the picture and the text */
+    background: rgba(30, 30, 30, 0.5); /* Made slightly darker so text is readable */
+    border-radius: 45px;
+    padding: 40px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile-pic {
+    border-radius: 50%; /* Makes the image a perfect circle */
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0; /* Stops the image from getting squished */
+    border: 4px solid #007bff; /* Optional: Adds a cool border around your photo */
+}
+
+.profile-content {
+    text-align: left;
+    color: #ffffff;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    border-bottom: none; /* Removes the blue underline from your global h2 just for this part */
+}
+
+.profile-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.find-me-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px; /* Spaces out your social icons */
+}
+
+.social-links img {
+    height: 40px; /* Makes all icons a uniform height */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s; /* Adds a hover animation */
+}
+
+.social-links img:hover {
+    transform: translateY(-5px); /* Icons float up slightly when hovered */
+}
+
+/* --- Mobile Responsiveness for Profile --- */
+@media (max-width: 800px) {
+    .profile-container {
+        flex-direction: column; /* Stacks image on top of text on phones */
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .profile-content {
+        text-align: center; /* Centers text on mobile */
+    }
+    
+    .social-links {
+        justify-content: center; /* Centers the icons on mobile */
+    }
+}
+
 /* --- Project Grid --- */
 .project-grid {
     display: flex;
