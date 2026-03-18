@@ -1,9 +1,10 @@
+
 /* --- Global Styles --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Roboto;
+    font-family: 'Roboto', sans-serif; /* Roboto is now the boss! */
 }
 
 body {
@@ -29,7 +30,7 @@ h1 {
 h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #007bff;
+    border-bottom: 2px solid #ff00cc;
     display: inline-block;
     padding-bottom: 5px;
 }
@@ -53,7 +54,7 @@ header p {
 nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #007bff;
+    color: #ff00cc;
     font-weight: bold;
 }
 
@@ -84,7 +85,7 @@ section {
     height: 300px;
     object-fit: cover;
     flex-shrink: 0; /* Stops the image from getting squished */
-    border: 4px solid #007bff; /* Optional: Adds a cool border around your photo */
+    border: 4px solid #ff00cc; /* Optional: Adds a cool border around your photo */
 }
 
 .profile-content {
@@ -107,7 +108,7 @@ section {
 .find-me-title {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: #007bff;
+    color: #ff00cc;
 }
 
 .social-links {
@@ -143,35 +144,215 @@ section {
     }
 }
 
-/* --- Project Grid --- */
-.project-grid {
+/* --- Featured Projects Section --- */
+.featured-section {
+
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    background-color: #1e1e1e;
+    overflow: hidden; /* Keeps the blurred background from spilling out of the borders */
+    margin: 40px 0;
+}
+
+/* The Solid Header Top Bar */
+.featured-header {
+    background-color: #222; 
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #111; /* A subtle shadow line separating header from the game */
+}
+
+.featured-header h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    border-bottom: none; /* Removes the pink underline from your global styles */
+}
+
+/* The Game Card Area */
+.featured-card {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    align-items: center;
+    min-height: 350px;
+}
+
+.featured-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(3px) brightness(0.4); /* Blurs and darkens the background */
+    z-index: 1;
+}
+
+.featured-content {
+    position: relative;
+    z-index: 2; /* Brings content in front of the blur */
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    width: 100%;
+}
+
+/* --- Interactive Hover Video Container --- */
+.video-container {
+    position: relative;
+    width: 350px;
+    height: 200px; /* Sets a fixed height so the video fits perfectly */
+    flex-shrink: 0;
+    border-radius: 15px;
+    overflow: hidden; /* Keeps the sharp iframe corners inside your rounded border */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* The image that sits on top */
+.featured-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2; /* Forces the image to sit in front of the video */
+    transition: opacity 0.4s ease; /* Creates a smooth fade effect */
+}
+
+/* The YouTube video in the back */
+.youtube-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Keeps the video behind the image */
+}
+
+/* The Magic Hover Effect! */
+.video-container:hover .featured-thumbnail {
+    opacity: 0; /* Makes the image turn invisible */
+    pointer-events: none; /* Crucial: lets the mouse "click through" the invisible image to press play on the video! */
+}
+
+.featured-text {
+    color: #ffffff;
+    flex: 1;
+}
+
+.featured-text h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.featured-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+/* --- Mobile Responsiveness for Featured Section --- */
+@media (max-width: 800px) {
+    .featured-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .featured-thumbnail {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .featured-text h3 {
+        font-size: 2rem;
+    }
+}
+
+/* --- Project Details Card --- */
+.project-details-card {
+    display: flex;
+    max-width: 1000px; /* Stops the card from getting wider than 850px */
+    margin-left: auto; /* Centers the card perfectly */
+    margin-right: auto;
+    gap: 30px;
+    background: rgba(30, 30, 30, 0.5); /* Matches your other cards */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
     margin-top: 20px;
 }
 
-.project-card {
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    /* Change 'flex: 1' to 'flex: 0 1' to prevent unwanted growing */
-    flex: 0 1 calc(33.333% - 20px); 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
-    
-    /* Ensure the card doesn't shrink too small on mid-sized screens */
-    min-width: 250px; 
+/* The left side with the badges */
+.details-sidebar {
+    flex: 1; 
+    min-width: 220px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider line */
+    padding-right: 20px;
 }
 
-.project-card img {
-    width: 100%;
-    max-width: 100%; /* Ensures it never overflows the padding of the card */
-    height: 180px;   /* Slightly shorter height can feel less "big" */
-    object-fit: cover;
-    display: block;  /* Removes bottom whitespace common in inline elements */
-    border-radius: 4px;
-    margin-bottom: 15px;
+/* The right side with the bullet points */
+.details-main {
+    flex: 2; 
+}
+
+.project-details-card h4 {
+    color: #ff00cc; /* Your portfolio's signature blue */
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.detail-group {
+    margin-bottom: 25px;
+}
+
+/* --- Badges/Pills --- */
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    background-color: #2b2a40; /* A slightly lighter dark purple/gray */
+    padding: 6px 14px;
+    border-radius: 20px; /* Makes them look like pills */
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffffff;
+    border: 1px solid #ff00cc; /* Adds a nice blue glowing edge */
+}
+
+/* --- Bulleted List --- */
+.contribution-list {
+    list-style-position: outside; /* Keeps bullets neatly aligned */
+    margin-left: 20px;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+.contribution-list li {
+    margin-bottom: 10px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .project-details-card {
+        flex-direction: column; /* Stacks everything vertically on phones */
+    }
+    
+    .details-sidebar {
+        border-right: none; /* Removes the vertical line */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Adds a horizontal line instead */
+        padding-right: 0;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
 }
 
 .project-card:hover {
@@ -179,7 +360,7 @@ section {
 }
 
 .project-card h3 {
-    color: #007bff;
+    color: #ff00cc;
     margin-bottom: 10px;
 }
 
