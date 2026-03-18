@@ -78,17 +78,23 @@ section {
     background: #ffffff;
     border-radius: 8px;
     padding: 20px;
-    flex: 1 1 calc(33.333% - 20px); /* 3 columns on desktop */
+    /* Change 'flex: 1' to 'flex: 0 1' to prevent unwanted growing */
+    flex: 0 1 calc(33.333% - 20px); 
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: transform 0.2s ease;
+    
+    /* Ensure the card doesn't shrink too small on mid-sized screens */
+    min-width: 250px; 
 }
 
 .project-card img {
-    width: 100%; /* Forces the image to never be wider than the card */
-    height: 200px; /* Sets a uniform height so all your cards line up perfectly */
-    object-fit: cover; /* Prevents the image from stretching/squishing if the aspect ratio doesn't match */
-    border-radius: 4px; /* Softens the corners to match your card design */
-    margin-bottom: 15px; /* Adds a little breathing room between the picture and the title */
+    width: 100%;
+    max-width: 100%; /* Ensures it never overflows the padding of the card */
+    height: 180px;   /* Slightly shorter height can feel less "big" */
+    object-fit: cover;
+    display: block;  /* Removes bottom whitespace common in inline elements */
+    border-radius: 4px;
+    margin-bottom: 15px;
 }
 
 .project-card:hover {
