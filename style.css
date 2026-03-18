@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #1f1b24;
+    background-color: #140523;
     color: #333;
     line-height: 1.6;
 }
@@ -36,7 +36,7 @@ h2 {
 
 /* --- Header --- */
 header {
-    background-color: #2d2736; 
+    background-color: #1C0533; 
     padding: 40px 0;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
