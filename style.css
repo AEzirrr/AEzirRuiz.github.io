@@ -280,6 +280,30 @@ section {
     box-shadow: 0 8px 20px rgba(255, 0, 204, 0.6); /* Increases the neon glow */
 }
 
+.github-link-button {
+    display: inline-block; /* Keeps the button from stretching across the whole screen */
+    padding: 12px 28px;
+    background-color: #2c2c2c; /* Your neon pink accent */
+    color: #ffffff !important; /* Forces the text to stay white */
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-decoration: none !important; /* Removes the underline */
+    border-radius: 20px; /* Gives it a sleek, pill-shaped look */
+    border: 2px solid #595959; 
+    transition: all 0.3s ease; /* Makes the hover effect perfectly smooth */
+    margin-top: 5px; /* Adds breathing room above the button */
+    margin-left: 10px; /* Adds breathing room above the button */
+    box-shadow: 0 4px 10px rgba(255, 0, 204, 0.2); /* A subtle pink glow */
+}
+
+/* The Magic Hover Effect */
+.github-link-button:hover {
+    background-color: transparent; /* Makes the background vanish */
+    color: #a2a2a2 !important; /* Turns the text pink */
+    transform: translateY(-4px); /* Makes the button float up slightly */
+    box-shadow: 0 8px 20px rgba(70, 70, 70, 0.6); /* Increases the neon glow */
+}
+
 /* --- Mobile Responsiveness for Featured Section --- */
 @media (max-width: 800px) {
     .featured-content {
