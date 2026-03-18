@@ -206,8 +206,14 @@ section {
     transition: transform 0.2s ease;
 }
 
-a.cert-badge {
-    text-decoration: none; /* Removes the default link underline */
+/* --- Remove Default Link Styles for Buttons --- */
+.social-links a,
+a.cert-badge,
+a.cert-badge h3,
+a.cert-badge p,
+a.cert-badge span {
+    text-decoration: none !important; 
+    color: inherit; /* This also stops the text from turning the default link blue! */
 }
 
 .cert-badge:hover {
