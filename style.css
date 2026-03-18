@@ -35,6 +35,7 @@ h2 {
     padding-bottom: 5px;
 }
 
+
 /* --- Header --- */
 header {
     background-color: #2B2A40; 
@@ -255,6 +256,30 @@ section {
     color: #e0e0e0;
 }
 
+/* --- Game Link Button --- */
+.game-link-button {
+    display: inline-block; /* Keeps the button from stretching across the whole screen */
+    padding: 12px 28px;
+    background-color: #ff00cc; /* Your neon pink accent */
+    color: #ffffff !important; /* Forces the text to stay white */
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-decoration: none !important; /* Removes the underline */
+    border-radius: 20px; /* Gives it a sleek, pill-shaped look */
+    border: 2px solid #ff00cc; 
+    transition: all 0.3s ease; /* Makes the hover effect perfectly smooth */
+    margin-top: 5px; /* Adds breathing room above the button */
+    box-shadow: 0 4px 10px rgba(255, 0, 204, 0.2); /* A subtle pink glow */
+}
+
+/* The Magic Hover Effect */
+.game-link-button:hover {
+    background-color: transparent; /* Makes the background vanish */
+    color: #ff00cc !important; /* Turns the text pink */
+    transform: translateY(-4px); /* Makes the button float up slightly */
+    box-shadow: 0 8px 20px rgba(255, 0, 204, 0.6); /* Increases the neon glow */
+}
+
 /* --- Mobile Responsiveness for Featured Section --- */
 @media (max-width: 800px) {
     .featured-content {
@@ -392,7 +417,8 @@ section {
 a.cert-badge,
 a.cert-badge h3,
 a.cert-badge p,
-a.cert-badge span {
+a.cert-badge span,
+a.game-link-button {
     text-decoration: none !important; 
     color: inherit; /* This also stops the text from turning the default link blue! */
 }
