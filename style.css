@@ -81,6 +81,14 @@ section {
     transition: transform 0.2s ease;
 }
 
+.project-card img {
+    width: 100%; /* Forces the image to never be wider than the card */
+    height: 200px; /* Sets a uniform height so all your cards line up perfectly */
+    object-fit: cover; /* Prevents the image from stretching/squishing if the aspect ratio doesn't match */
+    border-radius: 4px; /* Softens the corners to match your card design */
+    margin-bottom: 15px; /* Adds a little breathing room between the picture and the title */
+}
+
 .project-card:hover {
     transform: translateY(-5px);
 }
