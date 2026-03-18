@@ -13,7 +13,6 @@ body {
 }
 
 .container {
-    background-color: #1f1b24;
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
@@ -37,10 +36,10 @@ h2 {
 
 /* --- Header --- */
 header {
-    background-color: #1f1b24;
+    background-color: #2d2736; 
     padding: 40px 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
 }
 
 header p {
