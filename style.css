@@ -183,6 +183,59 @@ section {
     margin-bottom: 10px;
 }
 
+/* --- Certifications Section --- */
+.certifications-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center; /* Centers the badges horizontally */
+    margin-top: 20px;
+}
+
+.cert-badge {
+    background: rgba(30, 30, 30, 0.5); /* Matches your profile card style */
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 calc(50% - 30px); /* Puts them side-by-side on desktop */
+    max-width: 400px; /* Stops them from getting too wide */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.cert-badge:hover {
+    transform: translateY(-5px); /* Adds a nice hover float effect */
+}
+
+.cert-badge img {
+    width: 400px; /* Shrunk down from 410px so it fits nicely */
+    height: 400px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.cert-details h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.cert-details p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.cert-date {
+    color: #007bff; /* Blue accent color to match your headers */
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
 /* --- Footer --- */
 footer {
     background-color: #222;
