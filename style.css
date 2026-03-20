@@ -33,6 +33,7 @@ h2 {
     border-bottom: 2px solid #ff00cc;
     display: inline-block;
     padding-bottom: 5px;
+    color: #ffffff
 }
 
 
@@ -50,6 +51,22 @@ header p {
     font-style: bold;
     color: #ffffff;
     margin-bottom: 15px;
+}
+
+.header-button {
+    display: inline-block; /* Keeps the button from stretching across the whole screen */
+    padding: 12px 28px;
+    background-color: #ff00cc; /* Your neon pink accent */
+    color: #ffffff !important; /* Forces the text to stay white */
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-decoration: none !important; /* Removes the underline */
+    border-radius: 20px; /* Gives it a sleek, pill-shaped look */
+    border: 2px solid #595959; 
+    transition: all 0.3s ease; /* Makes the hover effect perfectly smooth */
+    margin-top: 5px; /* Adds breathing room above the button */
+    margin-left: 5px; /* Adds breathing room above the button */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 nav a {
@@ -143,6 +160,38 @@ section {
     .social-links {
         justify-content: center; /* Centers the icons on mobile */
     }
+}
+
+/* --- Project Details Card --- */
+.skills-details-card {
+    display: flex;
+    max-width: 1000px; /* Stops the card from getting wider than 850px */
+    margin-left: auto; /* Centers the card perfectly */
+    margin-right: auto;
+    gap: 30px;
+    background: rgba(30, 30, 30, 0.5); /* Matches your other cards */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+/* --- Badges/Pills --- */
+.skills-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-badge {
+    background-color: #2b2a40; /* A slightly lighter dark purple/gray */
+    padding: 6px 14px;
+    border-radius: 20px; /* Makes them look like pills */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    border: 1px solid #ff00cc; /* Adds a nice blue glowing edge */
 }
 
 /* --- Featured Projects Section --- */
@@ -413,7 +462,55 @@ section {
     margin-bottom: 10px;
 }
 
+/* --- Contact Section --- */
+.contact-container {
+    display: flex; /* Uses Flexbox to put image and text side-by-side */
+    align-items: center; /* Centers them vertically */
+    gap: 40px; /* Puts a nice 40px space between the picture and the text */
+    background: rgba(30, 30, 30, 0.5); /* Made slightly darker so text is readable */
+    border-radius: 45px;
+    padding: 40px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-pic {
+    border-radius: 50%; /* Makes the image a perfect circle */
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0; /* Stops the image from getting squished */
+    border: 4px solid #ff00cc; /* Optional: Adds a cool border around your photo */
+}
+
+.contact-content {
+    text-align: left;
+    color: #ffffff;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    border-bottom: none; /* Removes the blue underline from your global h2 just for this part */
+}
+
+.contact-description {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+
+
 /* --- Certifications Section --- */
+.certifications-container {
+    background: rgba(30, 30, 30, 0.5); /* The nice dark transparent box */
+    border-radius: 45px;
+    padding: 40px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+
+}
 .certifications-grid {
     display: flex;
     flex-wrap: wrap;
@@ -423,15 +520,19 @@ section {
 }
 
 .cert-badge {
-    background: rgba(30, 30, 30, 0.5); /* Matches your profile card style */
+    background: rgba(30, 30, 30, 0.5); 
     border-radius: 20px;
     padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    flex: 1 1 calc(50% - 30px); /* Puts them side-by-side on desktop */
-    max-width: 400px; /* Stops them from getting too wide */
+    
+    /* This forces them to take up exactly half the space, minus the gap */
+    flex: 1 1 calc(50% - 30px); 
+    min-width: 280px; /* Ensures they don't get completely squished */
+    max-width: 400px; 
+    
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease;
 }
@@ -439,12 +540,9 @@ section {
 /* --- Remove Default Link Styles for Buttons --- */
 .social-links a,
 a.cert-badge,
-a.cert-badge h3,
-a.cert-badge p,
-a.cert-badge span,
 a.game-link-button {
     text-decoration: none !important; 
-    color: inherit; /* This also stops the text from turning the default link blue! */
+    color: inherit; 
 }
 
 .cert-badge:hover {
@@ -452,8 +550,9 @@ a.game-link-button {
 }
 
 .cert-badge img {
-    width: 400px; /* Shrunk down from 410px so it fits nicely */
-    height: 400px;
+    width: 100%; /* Makes the image shrink to fit the badge container */
+    max-width: 320px; /* Stops the image from getting too massive */
+    height: auto; /* Keeps the aspect ratio perfect */
     object-fit: contain;
     margin-bottom: 20px;
 }
